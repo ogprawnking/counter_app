@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- UTF-8 allows for characters not typically associated with ASCII
+   like emoji's -->
+  <meta charset="UTF-8" />
+   <!-- This sets the viewport to the devices correct width
+    and forces the zoom scale to be at 100% each time it loads this webpage  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counter App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <h1>Counter</h1>
+
+    <div class="counter-box">
+      <button id="decrease">-</button>
+<!-- <span> is often used when an element will be dynamically changed.
+   like changing a value or colour -->
+      <span id="count">0</span>
+
+      <button id="increase">+</button>
+    </div>
+
+    <button id="reset" class="reset-btn">Reset</button>
+
+  </div>
+
+  <!-- reference to js file
+   this HAS to be at the end of the html so that all elements are known prior 
+   to 'editing' them in scripts. -->
+  <script src="script.js"></script>
+</body>
+</html>
