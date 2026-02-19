@@ -14,11 +14,17 @@ increaseBtn.addEventListener('click', () => {
     count++; // increment count by 1
     countDisplay.textContent = count; // update the displayed count
 });
+
 // Decrease button
 // Add event listener to decrease button
 decreaseBtn.addEventListener('click', () => {
-    count--; // decrement count by 1
-    countDisplay.textContent = count; // update the displayed count
+    if(count <= 0) {
+        return; // if count is 0 or less, do nothing and exit the function
+    }
+    else {
+        count--; // decrement count by 1
+        countDisplay.textContent = count; // update the displayed count
+    }
 });
 
 // Reset button
