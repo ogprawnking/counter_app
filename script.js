@@ -15,7 +15,7 @@ countDisplay.style.color = 'red';
 increaseBtn.addEventListener('click', () => {
     count++; // increment count by 1
     if(count > 0) {
-        countDisplay.style.color = 'black'; // reset color to black if it was red
+        countDisplay.style.color = 'green'; // reset color to black if it was red
         countDisplay.textContent = count; // update the displayed count
     }
 });
