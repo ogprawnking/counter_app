@@ -7,6 +7,7 @@ const countDisplay = document.getElementById('count');
 
 // Store current count
 let count = 0; // defaults to 0
+countDisplay.style.color = 'red';
 
 
 // Increase button
@@ -38,4 +39,6 @@ decreaseBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
     count = 0; // reset count to 0
     countDisplay.textContent = count; // update the displayed count
+    countDisplay.style.color = 'red';
+
 });
