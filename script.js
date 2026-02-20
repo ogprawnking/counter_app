@@ -21,10 +21,15 @@ if (savedCount !== null){
     }
 }
 // updates the count display and saves the count to local storage
-function updateCounterDisplay(color = 'black') {
-    countDisplay.textContent = count; // update displayed count
+function updateCounterDisplay() {
     localStorage.setItem("count", count); // save count to variable called "count"
-    countDisplay.style.color = color; // update color of count display
+    
+    countDisplay.textContent = count; // update displayed count
+    if (count <= 0) {
+        countDisplay.style.color = 'red';
+    } else {
+        countDisplay.style.color = 'green';
+    }
 }
 
 
@@ -32,39 +37,33 @@ function updateCounterDisplay(color = 'black') {
 // Add event listener to increase button
 increaseBtn.addEventListener('click', () => {
     count++; // increment count by 1
-    if(count > 0) {
-        updateCounterDisplay('green');
-    }
+    updateCounterDisplay();
 });
 
 increaseFiveBtn.addEventListener('click', () => {
     count += 5;
-    if(count > 0) {
-        updateCounterDisplay('green');
-    }
+    updateCounterDisplay();
 });
 
 // Decrease button
 // Add event listener to decrease button
 decreaseBtn.addEventListener('click', () => {
-    countDisplay.textContent = count; // update the displayed count
-    if(count > 0) {
-        count--; // decrement count by 1
-        updateCounterDisplay('green');
-        }
-    if(count <= 0) {
+    if (count <= 0) {
         count = 0; // prevent count from going below 0
-        updateCounterDisplay('red');
+        updateCounterDisplay();
+        return;
     }
+    count--;
+    updateCounterDisplay();
 });
 
 decreaseFiveBtn.addEventListener('click', () => {
     if(count > 0) {
         count -= 5;
-        updateCounterDisplay('green');
-        if(count <= 0) {
+        updateCounterDisplay();
+        if(count < 0) {
             count = 0;
-            updateCounterDisplay('red');
+            updateCounterDisplay();
         }
     }
 });
@@ -74,5 +73,5 @@ decreaseFiveBtn.addEventListener('click', () => {
 // Add event listener to reset button
 resetBtn.addEventListener('click', () => {
     count = 0; // reset count to 
-    updateCounterDisplay('red');
+    updateCounterDisplay();
 });
