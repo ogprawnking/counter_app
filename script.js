@@ -47,11 +47,15 @@ decreaseBtn.addEventListener('click', () => {
 decreaseFiveBtn.addEventListener('click', () => {
     if(count > 0) {
         count -= 5;
-        if(count < 0) {
-            count = 0;
-        }
         countDisplay.textContent = count;
-        countDisplay.style.color = 'red';
+        countDisplay.style.color = 'green';
+
+        if(count <= 0) {
+            count = 0;
+            countDisplay.textContent = count;
+            countDisplay.style.color = 'red';
+            return;
+        }
     }
 });
 
